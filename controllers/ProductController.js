@@ -98,8 +98,8 @@ module.exports = {
     update: (req, res)=>{
         const id = req.params.id;
 
-        const ObjStr = JSON.stringify(req.body);
-        var product = JSON.parse(ObjStr);
+//        const ObjStr = JSON.stringify(req.body);
+        var product = JSON.parse(req.body.product);
 
         if(req.file){
             product.image = `${req.protocol}://${req.get('host')}/images/products/${req.file.filename}`;
